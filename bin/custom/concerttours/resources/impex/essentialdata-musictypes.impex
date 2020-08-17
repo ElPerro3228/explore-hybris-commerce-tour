@@ -1,4 +1,5 @@
 # ImpEx for Importing Music Type Enum values into Little Concert Tours Store
+
 INSERT_UPDATE MusicType; code[unique = true]
                        ; rock
                        ; jazz
