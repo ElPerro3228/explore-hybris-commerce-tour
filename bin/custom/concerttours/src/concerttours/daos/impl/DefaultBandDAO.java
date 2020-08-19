@@ -27,7 +27,7 @@ public class DefaultBandDAO implements BandDAO {
     public List<BandModel> findBandsByCode(String code) {
         final String queryString = "SELECT {p:" + BandModel.PK + "} " +
                 "FROM {" + BandModel._TYPECODE + " AS p} " +
-                "WHERE {p:" + BandModel.CODE + "=?code}";
+                "WHERE {p:" + BandModel.CODE + "}=?code";
         final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
         query.addQueryParameter("code", code);
         return flexibleSearchService.<BandModel> search(query).getResult();
