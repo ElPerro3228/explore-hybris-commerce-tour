@@ -4,8 +4,9 @@
 <title>Band Details</title>
 <body>
 <h1>Band Details</h1>
-Band Details for ${band.name}
-<p>${band.description}</p>
+Band Details for <c:out value="${band.name}"/>
+<p><img src="${band.imageURL}"/></p>
+<p><c:out value="${band.description}"/></p>
 <p>Music type:</p>
 <ul>
     <c:forEach var="genre" items="${band.genres}">

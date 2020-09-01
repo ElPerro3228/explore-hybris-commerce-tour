@@ -6,7 +6,7 @@
 <h1>Band List</h1>
 <ul>
     <c:forEach var="band" items="${bands}">
-        <li><a href="./bands/${band.id}"><c:out value="${band.name}"/></a></li>
+        <li><a href="./bands/${band.id}"><img src="${band.imageURL}" /><c:out value="${band.name}"/></a></li>
     </c:forEach>
 </ul>
 </body>
