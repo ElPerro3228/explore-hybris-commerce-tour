@@ -27,7 +27,7 @@ public class UpdateVenuesJob extends AbstractJobPerformable<CronJobModel> {
             return new PerformResult(CronJobResult.SUCCESS, CronJobStatus.FINISHED);
         } catch (IOException e) {
             LOGGER.error("unable to update venues");
-            e.printStackTrace();
+            LOGGER.error(e.getStackTrace());
             return new PerformResult(CronJobResult.FAILURE, CronJobStatus.FINISHED);
         }
     }

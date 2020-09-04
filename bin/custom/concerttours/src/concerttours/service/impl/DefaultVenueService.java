@@ -61,7 +61,7 @@ public class DefaultVenueService implements VenueService {
         venueModel.setCode(venue.get("id").toString());
         venueModel.setDescription(venue.get("description").toString());
         JSONObject city = (JSONObject) venue.get("city");
-        venueModel.setLocation(venue.get("zip").toString() + ", " + venue.get("street").toString() + ", " + city.get("displayName"));
+        venueModel.setLocation(String.join(", ", venue.get("zip").toString(), venue.get("street").toString(), city.get("displayName").toString()));
         return venueModel;
     }
 
