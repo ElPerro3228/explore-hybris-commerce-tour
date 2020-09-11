@@ -1,5 +1,4 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!doctype html>
 <html>
@@ -8,6 +7,8 @@
 <h1>Tour Details</h1>
 Tour Details for ${tour.tourName}
 <p>${tour.description}</p>
+<h4>Producer</h4>
+<p><c:out value="${tour.producer.name} ${tour.producer.surname}" /></p>
 <p>Schedule:</p>
 <table>
     <tr><th>Venue</th><th></th><th>Date</th><th>Days Until</th></tr>
