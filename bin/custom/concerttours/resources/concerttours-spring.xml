@@ -34,6 +34,8 @@
 
     <bean id="concerttourEventListener" class="concerttours.events.NewBandEventListener" parent="abstractEventListener">
         <property name="modelService" ref="modelService" />
+        <property name="catalogVersionService" ref="catalogVersionService" />
+        <property name="keyGenerator" ref="newsCodeGenerator" />
     </bean>
 
     <bean id="bandAlbumSalesInterceptor" class="concerttours.interceptors.BandAlbumSalesInterceptor" />
@@ -43,6 +45,15 @@
     </bean>
     <bean id="bandAlbumSalesEventListener" class="concerttours.events.BandAlbumSalesEventListener" parent="abstractEventListener" >
         <property name="modelService" ref="modelService" />
+        <property name="catalogVersionService" ref="catalogVersionService" />
+        <property name="keyGenerator" ref="newsCodeGenerator" />
+    </bean>
+    <bean id="newsCodeGenerator" class="de.hybris.platform.servicelayer.keygenerator.impl.PersistentKeyGenerator">
+        <property name="key" value="${keygen.news.code.name}"/>
+        <property name="digits" value="${keygen.news.code.digits}"/>
+        <property name="start" value="${keygen.news.code.start}"/>
+        <property name="type" value="${keygen.news.code.type}"/>
+        <property name="template" value="${keygen.news.code.template}"/>
     </bean>
 
     <alias name="defaultProducerService" alias="producerService" />
